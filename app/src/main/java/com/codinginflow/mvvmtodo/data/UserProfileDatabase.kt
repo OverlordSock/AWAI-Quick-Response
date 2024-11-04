@@ -21,7 +21,7 @@ abstract class UserProfileDatabase : RoomDatabase() {
             super.onCreate(db)
             val dao = database.get().userProfileDao()
             applicationScope.launch {
-                dao.insert(UserProfile("ExampleFirstName", "ExampleLastName", 7,
+                dao.insert(UserProfile("ExampleName", "7",
                     "02040872914", "42 Wallaby Way", "Mum", "Dad"))
             }
         }

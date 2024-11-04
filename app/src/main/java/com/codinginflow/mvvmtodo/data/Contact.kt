@@ -8,8 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "contact_table")
 @Parcelize
 data class Contact(
-    val firstName: String,
-    val lastName: String,
+    val name: String,
     val phone: String,
     val relationship: String,
     val appointed: Boolean,

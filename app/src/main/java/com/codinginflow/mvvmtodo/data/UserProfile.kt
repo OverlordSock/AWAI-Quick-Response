@@ -8,9 +8,8 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "user_table")
 @Parcelize
 data class UserProfile (
-    val firstName: String,
-    val lastName: String,
-    val age: Int,
+    val name: String,
+    val age: String,
     val phoneNumber: String,
     val address: String,
     val caregiver1: String,

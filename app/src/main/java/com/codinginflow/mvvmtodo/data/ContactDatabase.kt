@@ -26,7 +26,7 @@ abstract class ContactDatabase : RoomDatabase() {
             val dao = database.get().contactDao()  // Get the ContactDao instance
             applicationScope.launch {
                 // Insert sample contact
-                dao.insert(Contact("ExampleFirstName", "ExampleLastName", "0800838383",
+                dao.insert(Contact("ExampleName", "0800838383",
                     "Caterer", false))
             }
         }
