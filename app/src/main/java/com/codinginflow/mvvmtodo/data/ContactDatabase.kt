@@ -1,7 +1,5 @@
 package com.codinginflow.mvvmtodo.data
 
-import Question
-import QuestionDao
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -12,24 +10,24 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 // Database class for Room, defining entities and version
-@Database(entities = [Question::class], version = 1)
-abstract class QuestionsDatabase : RoomDatabase() {
-    // Abstract function to get the QuestionDao
-    abstract fun questionDao(): QuestionDao
+@Database(entities = [Contact::class], version = 1)
+abstract class ContactDatabase : RoomDatabase() {
+    // Abstract function to get the ContactDao
+    abstract fun contactDao(): ContactDao
 
     // Callback class to populate the database on creation
     class Callback @Inject constructor(
-        private val database: Provider<QuestionsDatabase>,  // Provider to get an instance of QuestionsDatabase
+        private val database: Provider<ContactDatabase>,  // Provider to get an instance of Database
         @ApplicationScope private val applicationScope: CoroutineScope  // CoroutineScope for launching coroutines
     ) : RoomDatabase.Callback() {
         // Override onCreate method to insert initial tasks into the database
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
-            val dao = database.get().questionDao()  // Get the QuestionDao instance
+            val dao = database.get().contactDao()  // Get the ContactDao instance
             applicationScope.launch {
-                // Insert sample questions into the database
-                dao.insertQuestion(Question(1, "Example question 1", false, true, false))
-                dao.insertQuestion(Question(2, "Example question 2", false, true, false))
+                // Insert sample contact
+                dao.insert(Contact("ExampleFirstName", "ExampleLastName", "0800838383",
+                    "Caterer", false))
             }
         }
     }

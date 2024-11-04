@@ -7,12 +7,13 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "user_table")
 @Parcelize
-data class UserContact (
-    @PrimaryKey val id: Int,
+data class UserProfile (
     val firstName: String,
     val lastName: String,
+    val age: Int,
     val phoneNumber: String,
-    val emergencyContact1: String,
-    val emergencyContact2: String,
-    val emergencyContact3: String,
+    val address: String,
+    val caregiver1: String,
+    val caregiver2: String?,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0
 ) : Parcelable
