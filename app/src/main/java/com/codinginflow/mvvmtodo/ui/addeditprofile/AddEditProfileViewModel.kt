@@ -5,8 +5,8 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codinginflow.mvvmtodo.ADD_PROFILE_RESULT_OK
-import com.codinginflow.mvvmtodo.EDIT_PROFILE_RESULT_OK
+import com.codinginflow.mvvmtodo.ui.ADD_PROFILE_RESULT_OK
+import com.codinginflow.mvvmtodo.ui.EDIT_PROFILE_RESULT_OK
 import com.codinginflow.mvvmtodo.data.UserProfile
 import com.codinginflow.mvvmtodo.data.UserProfileDao
 import kotlinx.coroutines.channels.Channel

@@ -5,8 +5,8 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codinginflow.mvvmtodo.ADD_CONTACT_RESULT_OK
-import com.codinginflow.mvvmtodo.EDIT_CONTACT_RESULT_OK
+import com.codinginflow.mvvmtodo.ui.ADD_CONTACT_RESULT_OK
+import com.codinginflow.mvvmtodo.ui.EDIT_CONTACT_RESULT_OK
 import com.codinginflow.mvvmtodo.data.Contact
 import com.codinginflow.mvvmtodo.data.ContactDao
 import kotlinx.coroutines.channels.Channel
