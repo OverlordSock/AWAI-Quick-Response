@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_border"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/text_view_name_label"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Name:" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="contact_name" />
+
+    <TextView
+        android:id="@+id/text_view_phone_label"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_name_label"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Phone:" />
+
+    <TextView
+        android:id="@+id/text_view_phone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_name"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="contact_phone" />
+
+    <TextView
+        android:id="@+id/text_view_relationship_label"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_phone_label"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Relationship:" />
+
+    <TextView
+        android:id="@+id/text_view_relationship"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_phone"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="contact_relationship" />
+
+    <TextView
+        android:id="@+id/text_view_appointed"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_relationship_label"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Appointed by Oranga Tamariki" />
+
+</RelativeLayout>

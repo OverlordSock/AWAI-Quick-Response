@@ -19,7 +19,4 @@ interface UserProfileDao{
 
     @Update
     suspend fun update(userProfile: UserProfile)
-
-    @Delete
-    suspend fun delete(userProfile: UserProfile)
 }
