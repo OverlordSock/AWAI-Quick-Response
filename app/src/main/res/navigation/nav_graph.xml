@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/addEditContactFragment">
+    app:startDestination="@id/menuFragment">
 
     <fragment
         android:id="@+id/addEditContactFragment"
         android:name="com.codinginflow.mvvmtodo.ui.addeditcontact.AddEditContactFragment"
-        android:label="fragment_add_edit_contact"
-        tools:layout="@layout/fragment_add_edit_contact" >
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_contact">
         <argument
             android:name="contact"
             app:argType="com.codinginflow.mvvmtodo.data.Contact"
@@ -21,15 +21,125 @@
     <fragment
         android:id="@+id/addEditProfileFragment"
         android:name="com.codinginflow.mvvmtodo.ui.addeditprofile.AddEditProfileFragment"
-        android:label="fragment_add_edit_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_add_edit_profile" />
     <fragment
         android:id="@+id/contactsFragment"
         android:name="com.codinginflow.mvvmtodo.ui.contacts.ContactsFragment"
-        android:label="fragment_contacts"
-        tools:layout="@layout/fragment_contacts" >
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts">
         <action
             android:id="@+id/action_contactsFragment_to_addEditContactFragment"
             app:destination="@id/addEditContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.codinginflow.mvvmtodo.ui.menu.MenuFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_addEditProfileFragment"
+            app:destination="@id/addEditProfileFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_quiz1Fragment"
+            app:destination="@id/quiz1Fragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_confirmSendFragment"
+            app:destination="@id/confirmSendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz1Fragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.Quiz1Fragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_1">
+        <argument
+            android:name="tamariki"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_quiz1Fragment_to_quiz2Fragment"
+            app:destination="@id/quiz2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz2Fragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.Quiz2Fragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_2">
+        <argument
+            android:name="tamariki"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="answers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quiz2Fragment_to_quiz3Fragment"
+            app:destination="@id/quiz3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz3Fragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.Quiz3Fragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_3">
+        <argument
+            android:name="tamariki"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="answers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quiz3Fragment_to_quiz4Fragment"
+            app:destination="@id/quiz4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz4Fragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.Quiz4Fragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_4">
+        <argument
+            android:name="tamariki"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="answers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quiz4Fragment_to_quiz5Fragment"
+            app:destination="@id/quiz5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz5Fragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.Quiz5Fragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz_5">
+        <argument
+            android:name="tamariki"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="answers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quiz5Fragment_to_confirmSendFragment"
+            app:destination="@id/confirmSendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmSendFragment"
+        android:name="com.codinginflow.mvvmtodo.ui.quiz.ConfirmSendFragment"
+        android:label="fragment_confirm_send"
+        tools:layout="@layout/fragment_confirm_send" >
+        <argument
+            android:name="tamariki"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="answers"
+            app:argType="string[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

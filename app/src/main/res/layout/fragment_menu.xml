@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.menu.MenuFragment">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="62dp"
-        android:layout_height="0dp"
+        android:layout_height="62dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="177dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_quiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/app_logo" />
@@ -52,13 +53,13 @@
         android:text="✔ English"
         android:textAllCaps="false"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button" />
+        app:layout_constraintBottom_toTopOf="@+id/button_quiz"
+        app:layout_constraintEnd_toEndOf="@+id/button_quiz" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_quiz"
         android:layout_width="306dp"
-        android:layout_height="0dp"
+        android:layout_height="74dp"
         android:layout_marginBottom="377dp"
         android:backgroundTint="#0070C0"
         android:text="Quiz"
@@ -70,42 +71,42 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/button_contacts"
         android:layout_width="306dp"
         android:layout_height="74dp"
         android:backgroundTint="#0070C0"
-        android:text="Emergency Contacts"
+        android:text="Contacts"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/button_quiz"
+        app:layout_constraintStart_toStartOf="@+id/button_quiz"
+        app:layout_constraintTop_toBottomOf="@+id/button_quiz" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/button_profile"
         android:layout_width="306dp"
         android:layout_height="74dp"
         android:backgroundTint="#0070C0"
         android:text="Profile"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintEnd_toEndOf="@+id/button_contacts"
+        app:layout_constraintStart_toStartOf="@+id/button_contacts"
+        app:layout_constraintTop_toBottomOf="@+id/button_contacts" />
 
     <Button
-        android:id="@+id/button14"
-        android:layout_width="150dp"
+        android:id="@+id/button_panic"
+        android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#FF0000"
         android:backgroundTintMode="src_atop"
-        android:text="PANIC!"
+        android:text="EMERGENCY!"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="@+id/button_profile"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintStart_toStartOf="@+id/button_profile"
+        app:layout_constraintTop_toBottomOf="@+id/button_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

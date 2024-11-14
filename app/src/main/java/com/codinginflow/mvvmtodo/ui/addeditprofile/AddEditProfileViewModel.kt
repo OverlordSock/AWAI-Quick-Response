@@ -66,6 +66,9 @@ class AddEditProfileViewModel @ViewModelInject constructor(
         } else if(profileAge.isBlank()) {
             showInvalidInputMessage("Age cannot be empty")
             return
+        } else if(profileAge.toIntOrNull() == null) {
+            showInvalidInputMessage("Age must be a number")
+            return
         } else if(profilePhone.isBlank()) {
             showInvalidInputMessage("Phone number cannot be empty")
             return
