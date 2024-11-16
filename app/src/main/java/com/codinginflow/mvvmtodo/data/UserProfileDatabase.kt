@@ -20,10 +20,6 @@ abstract class UserProfileDatabase : RoomDatabase() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             val dao = database.get().userProfileDao()
-            applicationScope.launch {
-                dao.insert(UserProfile("ExampleName", "7",
-                    "02040872914", "42 Wallaby Way", "Mum", "Dad"))
-            }
         }
     }
 }

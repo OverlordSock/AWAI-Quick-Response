@@ -1,9 +1,6 @@
 package com.codinginflow.mvvmtodo.ui.contacts
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -12,12 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.codinginflow.mvvmtodo.R
 import com.codinginflow.mvvmtodo.data.Contact
 import com.codinginflow.mvvmtodo.databinding.FragmentContactsBinding
-import com.codinginflow.mvvmtodo.ui.contacts.ContactsAdapter
-import com.codinginflow.mvvmtodo.ui.contacts.ContactsViewModel
 import com.codinginflow.mvvmtodo.util.exhaustive
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -81,10 +75,5 @@ class ContactsFragment : Fragment(R.layout.fragment_contacts), ContactsAdapter.O
 
     override fun onItemClick(contact: Contact) {
         viewModel.onContactSelected(contact)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        searchView.setOnQueryTextListener(null)
     }
 }

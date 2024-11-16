@@ -12,13 +12,13 @@ import kotlinx.android.synthetic.main.fragment_contacts.*
 class Quiz3Fragment : Fragment(R.layout.fragment_quiz_3) {
 
     private val args: Quiz3FragmentArgs by navArgs()
-    val isTamariki = args.tamariki
-    val answers = args.answers
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentQuiz3Binding.bind(view)
+        val isTamariki = args.tamariki
+        val answers = args.answers
 
         if (!isTamariki) {
             textViewTitle.text = "Are you or anyone else about to get hurt?"
@@ -26,21 +26,21 @@ class Quiz3Fragment : Fragment(R.layout.fragment_quiz_3) {
 
         binding.apply {
             buttonYes.setOnClickListener {
-                nextQuestion(true)
+                nextQuestion(true, isTamariki, answers)
             }
             buttonNo.setOnClickListener {
-                nextQuestion(false)
+                nextQuestion(false, isTamariki, answers)
             }
         }
     }
 
-    fun nextQuestion(questionAnswer: Boolean) {
+    fun nextQuestion(questionAnswer: Boolean, ageBoolean: Boolean, answers: Array<String>) {
 
         if (questionAnswer) {
             answers[2] = "Yes"
         }
 
-        val action = Quiz3FragmentDirections.actionQuiz3FragmentToQuiz4Fragment(isTamariki, answers)
+        val action = Quiz3FragmentDirections.actionQuiz3FragmentToQuiz4Fragment(ageBoolean, answers)
         findNavController().navigate(action)
     }
 }

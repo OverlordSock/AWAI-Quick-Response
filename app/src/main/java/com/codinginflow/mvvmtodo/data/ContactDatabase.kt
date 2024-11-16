@@ -24,11 +24,6 @@ abstract class ContactDatabase : RoomDatabase() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             val dao = database.get().contactDao()  // Get the ContactDao instance
-            applicationScope.launch {
-                // Insert sample contact
-                dao.insert(Contact("ExampleName", "0800838383",
-                    "Caterer", false))
-            }
         }
     }
 }

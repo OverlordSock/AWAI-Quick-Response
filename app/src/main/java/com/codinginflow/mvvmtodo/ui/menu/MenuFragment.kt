@@ -10,9 +10,11 @@ import com.codinginflow.mvvmtodo.R
 import com.codinginflow.mvvmtodo.databinding.FragmentMenuBinding
 import com.codinginflow.mvvmtodo.util.exhaustive
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private val viewModel: MenuViewModel by viewModels()
@@ -27,8 +29,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             buttonQuiz.setOnClickListener {
                 lifecycleScope.launch {
                     if (viewModel.onQuizClick()) {
-                        val isTamariki = viewModel.isTamariki()
-                        val action = MenuFragmentDirections.actionMenuFragmentToQuiz1Fragment(isTamariki)
+                        val action = MenuFragmentDirections.actionMenuFragmentToQuiz1Fragment(true)
                         findNavController().navigate(action)
                     }
                 }
@@ -40,6 +41,14 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             buttonContacts.setOnClickListener {
                 val action = MenuFragmentDirections.actionMenuFragmentToContactsFragment()
                 findNavController().navigate(action)
+            }
+            buttonPanic.setOnClickListener {
+                lifecycleScope.launch {
+                    if (viewModel.onQuizClick()) {
+                        val action = MenuFragmentDirections.actionMenuFragmentToConfirmSendFragment(true)
+                        findNavController().navigate(action)
+                    }
+                }
             }
         }
 

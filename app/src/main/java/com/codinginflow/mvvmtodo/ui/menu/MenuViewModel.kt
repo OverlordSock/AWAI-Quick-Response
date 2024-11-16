@@ -34,11 +34,14 @@ class MenuViewModel @ViewModelInject constructor(
     }
 
     suspend fun isTamariki(): Boolean {
-        return profiles.firstOrNull()?.firstOrNull()?.let { userProfile ->
-            userProfile.age.toIntOrNull()?.let { age ->
-                age <= 13
-            } ?: false  // Return false if age cannot be parsed to an integer
-        } ?: false
+        val age = profiles.firstOrNull()?.firstOrNull()?.age?.toIntOrNull()
+        if (age != null && age <= 13){
+            return true
+        } else if (age != null && age > 13) {
+            return false
+        } else {
+            return false
+        }
     }
 
     private val menuEventChannel = Channel<MenuViewModel.MenuEvent>()
