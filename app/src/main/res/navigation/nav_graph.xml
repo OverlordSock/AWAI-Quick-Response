@@ -130,16 +130,16 @@
     <fragment
         android:id="@+id/confirmSendFragment"
         android:name="com.codinginflow.mvvmtodo.ui.quiz.ConfirmSendFragment"
-        android:label="fragment_confirm_send"
-        tools:layout="@layout/fragment_confirm_send" >
+        android:label="Confirm Alert?"
+        tools:layout="@layout/fragment_confirm_send">
         <argument
             android:name="tamariki"
-            app:argType="boolean"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            app:argType="boolean" />
         <argument
             android:name="answers"
+            android:defaultValue="@null"
             app:argType="string[]"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
 </navigation>
